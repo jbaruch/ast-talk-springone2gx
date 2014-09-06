@@ -1,2 +1,41 @@
-ast-talk-springone2gx
-=====================
+** Getting practical with AST Transformations **
+------------------------------------------------
+
+ - Why?
+     - Getter and setter example getters/setters
+ - How?
+    - Abstract Syntax Tree
+        - Assert
+            - AST Browser
+ - Adding author field
+     - Global transfformations vs. local transformations and more!
+     - Testing transformations
+        - org.springone2gx.ast.ASTTransformationsTests
+     - Writing global transformation
+        - org.springone2gx.ast.AuthorAdderASTTransformation
+        - Compiler phases
+        - META-INF\services\org.codehaus.groovy.transform.ASTTransformation
+ - Adding message method
+    - Writing local transformations
+        - Annotation org.springone2gx.ast.Messenger
+        - org.springone2gx.ast.MessageAdderASTTransformation
+            - Achievement unlocked: [x] Hell of AST!
+ - Adding main method
+    - Another local transformation
+        - Annotation org.springone2gx.ast.Main
+        - org.springone2gx.ast.MainAdderASTTransformation
+        - Writing defensive code
+              - Achievement unlocked: [x] Compiler emits your messages!
+- AST for humans
+    - Less hell - Using GeneralUtils
+        - Simplifying MessageAdder with GeneralUtils
+    - Even less hell (Hello, Groovy!)
+        - org.springone2gx.ast.AuthorAdderGroovyASTTransformation
+    - Almost no hell (More Groovy!)
+        - org.springone2gx.ast.MessageAdderGroovyASTTransformation
+    - New AST transformation type! @Macro methods:
+        - org.springone2gx.ast.SafeAdderAstTransformation
+            - META-INF\services\org.codehaus.groovy.runtime.ExtensionModule
+- Performant AST
+    - Welcome back to Java!
+ - Questions from survivors
