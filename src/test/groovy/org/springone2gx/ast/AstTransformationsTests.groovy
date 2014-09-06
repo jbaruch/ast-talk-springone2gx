@@ -94,5 +94,4 @@ class AstTransformationsTests {
             assert null == safe(nullObject.hashcode())
         '''
     }
-
 }
