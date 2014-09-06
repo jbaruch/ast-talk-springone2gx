@@ -31,7 +31,7 @@
         - Simplifying MessageAdder with GeneralUtils
     - Even less hell (Hello, Groovy!)
         - org.springone2gx.ast.AuthorAdderGroovyASTTransformation
-    - Almost no hell (More Groovy!)
+    - Almost no hell (More Groovy - Macro extensions!)
         - org.springone2gx.ast.MessageAdderGroovyASTTransformation
     - New AST transformation type! @Macro methods:
         - org.springone2gx.ast.SafeAdderAstTransformation
