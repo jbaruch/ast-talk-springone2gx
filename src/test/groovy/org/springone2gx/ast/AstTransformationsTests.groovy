@@ -35,14 +35,14 @@ class AstTransformationsTests {
                 class QuietFoo { }
 
                 new QuietFoo().message('Hello, world!')
-                assert out.toString() == 'Hello, world!\\r\\n'
+                assert out.toString() == 'Hello, world!\\n'
                 out.reset()
 
                 @Messenger(shout = true)
                 class LoudFoo { }
 
                 new LoudFoo().message('Hello, world!')
-                assert out.toString() == 'HELLO, WORLD!\\r\\n'
+                assert out.toString() == 'HELLO, WORLD!\\n'
                 '''
     }
 
@@ -64,7 +64,7 @@ class AstTransformationsTests {
                     }
 
                     Foo.main(new String[0])
-                    assert out.toString() == 'Hello, world!\\r\\n'
+                    assert out.toString() == 'Hello, world!\\n'
                     '''
     }
 
