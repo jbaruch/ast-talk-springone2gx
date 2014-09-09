@@ -9,9 +9,9 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-public class AuthorAdderGroovyAstTransformation extends AbstractASTTransformation {
+class AuthorAdderGroovyAstTransformation extends AbstractASTTransformation {
     @Override
-    public void visit(final ASTNode[] nodes, final SourceUnit source) {
+    void visit(final ASTNode[] nodes, final SourceUnit source) {
         source.AST.classes.each { node ->
             node.addField new AstBuilder().buildFromSpec {
                 fieldNode '$AUTHOR', ACC_PUBLIC | ACC_FINAL | ACC_STATIC,

@@ -8,33 +8,33 @@
         - Assert
             - AST Browser
  - Adding author field
-     - Global transfformations vs. local transformations and more!
+     - Global transformations vs. local transformations and more!
      - Testing transformations
-        - org.springone2gx.ast.ASTTransformationsTests
+        - org.springone2gx.ast.AstTransformationsTests
      - Writing global transformation
-        - org.springone2gx.ast.AuthorAdderASTTransformation
+        - org.springone2gx.ast.AuthorAdderAstTransformation
         - Compiler phases
         - META-INF\services\org.codehaus.groovy.transform.ASTTransformation
  - Adding message method
     - Writing local transformations
         - Annotation org.springone2gx.ast.Messenger
-        - org.springone2gx.ast.MessageAdderASTTransformation
+        - org.springone2gx.ast.MessageAdderAstTransformation
             - Achievement unlocked: [x] Hell of AST!
  - Adding main method
     - Another local transformation
         - Annotation org.springone2gx.ast.Main
-        - org.springone2gx.ast.MainAdderASTTransformation
+        - org.springone2gx.ast.MainAdderAstTransformation
         - Writing defensive code
               - Achievement unlocked: [x] Compiler emits your messages!
 - AST for humans
     - Less hell - Using GeneralUtils
         - Simplifying MessageAdder with GeneralUtils
     - Even less hell (Hello, Groovy!)
-        - org.springone2gx.ast.AuthorAdderGroovyASTTransformation
+        - org.springone2gx.ast.AuthorAdderGroovyAstTransformation
     - Almost no hell (More Groovy - Macro extensions!)
-        - org.springone2gx.ast.MessageAdderGroovyASTTransformation
+        - org.springone2gx.ast.MessageAdderGroovyAstTransformation
     - New AST transformation type! @Macro methods:
-        - org.springone2gx.ast.SafeAdderAstTransformation
+        - org.springone2gx.ast.SafeAdderMacroExtension
             - META-INF\services\org.codehaus.groovy.runtime.ExtensionModule
 - Performant AST
     - Welcome back to Java!

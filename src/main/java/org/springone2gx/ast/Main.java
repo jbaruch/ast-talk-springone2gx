@@ -9,13 +9,11 @@ import java.lang.annotation.Target;
 
 /**
  * @author jbaruch
- * @since 06/09/2014
+ * @since 9/9/14
  */
-
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.METHOD)
 @GroovyASTTransformationClass(classes = MainAdderAstTransformation.class)
 public @interface Main {
-
 
 }

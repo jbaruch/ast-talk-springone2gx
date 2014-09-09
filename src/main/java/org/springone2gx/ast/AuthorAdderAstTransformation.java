@@ -17,11 +17,13 @@ public class AuthorAdderAstTransformation extends AbstractASTTransformation {
     public void visit(final ASTNode[] nodes, final SourceUnit source) {
         List<ClassNode> classes = source.getAST().getClasses();
         classes.forEach(node ->
-                node.addField(
-                        "$AUTHOR",
-                        ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
-                        ClassHelper.STRING_TYPE,
-                        new ConstantExpression("jbaruch")
-                ));
+                        node.addField(
+                                "$AUTHOR",
+                                ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
+                                ClassHelper.STRING_TYPE,
+                                new ConstantExpression("jbaruch")
+                        )
+        );
+
     }
 }

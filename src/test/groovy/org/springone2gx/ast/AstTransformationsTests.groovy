@@ -22,7 +22,7 @@ class AstTransformationsTests {
     }
 
     @Test
-    void 'message method should exist'() {
+    void 'Messenger annotation should generate a message method'() {
         assertScript '''
                 import org.springone2gx.ast.Messenger
 
@@ -47,7 +47,7 @@ class AstTransformationsTests {
     }
 
     @Test
-    void 'main method should exist and call annotated method'() {
+    void 'main annotation should generate a main method'() {
         assertScript '''
                     import org.springone2gx.ast.Main
 
@@ -69,29 +69,29 @@ class AstTransformationsTests {
     }
 
     @Test(expected = MultipleCompilationErrorsException)
-    void 'only one main method should exist!'() {
-        assertScript '''
-                import org.springone2gx.ast.Main
+    void 'main method adding should fail if psvm already exists'() {
+        Eval.me '''
+    import org.springone2gx.ast.Main
 
-                class Foo {
+    class Foo {
+        public static void main(String[] args) {
+            assert false, 'Wow, wrong main, dude!'
+        }
 
-                    public static void main(String[] args){
-                      throw new IllegalStateException('Wrong main, pal!')
-                    }
-
-                    @Main
-                    def greet() {
-                        println 'Hello, world!'
-                    }
-                }
-                '''
+        @Main
+        def greet() {
+            println 'Hello, world!'
+        }
+    }
+    Foo.main(new String[0])
+    '''
     }
 
     @Test
-    void "every class should have safe method"() {
+    void 'using safe method should prevent NPE'(){
         assertScript '''
-            def nullObject = null;
-            assert null == safe(nullObject.hashcode())
-        '''
+                    def nullObject = null;
+                    assert null == safe(nullObject.hashcode())
+                '''
     }
 }
